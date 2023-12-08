@@ -17,5 +17,15 @@ import com.generation.blogpessoal.repository.PostagemRepository;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PostagemController {
 
-
+/*
+ * @Autowired indica a injeção de dependência de um repositório (PostagemRepository) para interagir com o banco de dados.
+ *  A anotação @CrossOrigin permite requisições de qualquer origem.
+ *  @Autowired: Anotação do Spring que indica que a 
+ *	instância da classe PostagemRepository será automaticamente injetada aqui.
+ */
+	
+	@Autowired
+	private PostagemRepository postagemRepository;
+	
+	
 	}
