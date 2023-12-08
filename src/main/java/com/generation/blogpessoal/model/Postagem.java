@@ -35,7 +35,7 @@ public class Postagem {
 	String titulo;
 	
 	
-	
+	@Column(length= 1000)//sobrescrevendo a quantidade padrao de caracteres maximo
 	@NotBlank(message = "O atributo texto é Obrigatório!")
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 1000 caracteres")
 	private String texto;
