@@ -38,5 +38,9 @@ public class TemaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 
+	@PostMapping
+	public ResponseEntity<Tema> post(@Valid @RequestBody Tema tema) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(temaRepository.save(tema));
+	}
 
 }
