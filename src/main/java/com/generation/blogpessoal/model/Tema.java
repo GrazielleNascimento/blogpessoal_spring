@@ -25,7 +25,9 @@ public class Tema {
 	@NotNull(message = "O atributo Descrição é obrigatório")
  	private String descricao;
 	
-	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tema", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("tema")
+	private List<Postagem> postagem;
 	
 	//implementação dos geters e seters
 
@@ -45,7 +47,13 @@ public class Tema {
 		this.descricao = descricao;
 	}
 
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
 
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
  	
 	
 	
