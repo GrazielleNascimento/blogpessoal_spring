@@ -29,7 +29,7 @@ public class Usuario {
 	@NotBlank(message = "O Atributo Nome é Obrigatório!")
 	private String nome;
 
-	@NotNull(message = "O Atributo Usuário é Obrigatório!")//example@email.com
+	@NotNull(message = "O Atributo Usuário é Obrigatório!") // example@email.com
 	@Email(message = "O Atributo Usuário deve ser um email válido!")
 	private String usuario;
 
@@ -43,9 +43,21 @@ public class Usuario {
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
+
 	private List<Postagem> postagem;
 
-	/* Insira os Getters and Setters */ 
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+
+	public Usuario() {
+	}
+
+	/* Insira os Getters and Setters */
 
 	public Long getId() {
 		return this.id;
