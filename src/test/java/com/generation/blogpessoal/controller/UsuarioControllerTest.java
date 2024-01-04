@@ -1,4 +1,5 @@
-﻿
+﻿package com.generation.blogpessoal.controller;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Optional;
